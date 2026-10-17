@@ -62,3 +62,13 @@ Your reflection should be approximately 150–200 words and address the followin
 2. What challenges did you encounter, and how did you overcome them?
 3. Compare OOP to procedural programming.
 4. Discuss the benefits of maintainability and reusability and apply this managing overhead, practical application development, and future use.
+
+## Reflection Essay
+
+This assignment helped me understand how classes combined related data and behavior. I modeled a general workout in ParentClass and extended it into a Muay Thai session in ChildClass. Using super() allowed me to reuse initialization and description logic instead of repeating it.
+
+The most challenging concept was copying nested mutable data. I compared the output after adding "Hook" to the original drill combination. The shallow copy reflected that change because it shared the drills list, while the deep copy retained its independent combination. Displaying __dict__ also helped me distinguish shared class attributes from attributes stored on individual objects.
+
+Compared with procedural programming, which organized tasks around functions and steps, OOP provided a useful structure for multiple related session types. This supported maintainability and reusability because shared behavior could be updated in one parent class. However, extra classes could complicate a small script, and deep copying increased processing and memory overhead as nested data grew.
+
+Input validation prevented invalid sessions from interrupting execution. In future cybersecurity applications, I could apply these principles to organize specialized alerts, reuse validation logic, and handle malformed data reliably.
