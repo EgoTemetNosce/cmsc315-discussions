@@ -130,15 +130,7 @@ def demonstrate_copying():
     assert deep.drills[0] == ["Jab", "Cross"]
 
 
-# TODO 5:
-# Complete the main function.
-#
-# Requirements:
-# - Create at least one object from the parent class.
-# - Create at least one object from the child class.
-# - Demonstrate inheritance by calling methods.
-# - Call your namespace demonstration function.
-# - Call your copy demonstration function.
+
 
 
 # Student-created extension: validation and edge-case checks.
@@ -166,6 +158,15 @@ def demonstrate_validation():
     print("Program continued; valid drill added:", empty.drills)
 
 
+# TODO 5:
+# Complete the main function.
+#
+# Requirements:
+# - Create at least one object from the parent class.
+# - Create at least one object from the child class.
+# - Demonstrate inheritance by calling methods.
+# - Call your namespace demonstration function.
+# - Call your copy demonstration function.
 def main():
     print("=== Unit 1 OOP Assignment ===")
 
