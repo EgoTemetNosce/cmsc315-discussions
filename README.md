@@ -1,4 +1,3 @@
-
 # Completed Implementation: Muay Thai Training Sessions
 
 ## Implementation Documentation
@@ -7,8 +6,8 @@ I modeled training sessions with the original ParentClass and ChildClass names s
 - I created ParentClass with the class variable activity, the instance variables name and _duration, a constructor, and describe().
 - I created ChildClass with inheritance, the class variable sport, the instance variables focus and drills, add_drill(), and an overridden describe(). I used super() to reuse the parent's initialization and description.
 - I used _duration to signal an internal attribute by Python convention. This convention did not prevent outside access. I validated duration in the constructor.
-- I implemented __str__ to provide readable object output and __len__ to return the number of drill groups.
-- I displayed two instance namespaces using __dict__. I accessed sport through both the class and an object, added coach to only one object, and displayed the child class namespace keys.
+- I implemented `__str__` to provide readable object output and `__len__` to return the number of drill groups.
+- I displayed two instance namespaces using `__dict__`. I accessed sport through both the class and an object, added coach to only one object, and displayed the child class namespace keys.
 - I demonstrated shallow and deep copying with a nested list of drills. After I added Hook to the original combination, the shallow copy also contained Hook. The deep copy retained only Jab and Cross.
 - I added validation and edge-case checks as my student-created extension. I caught ValueError so invalid entries did not stop the demonstration.
 
@@ -22,8 +21,7 @@ I stored drills in nested lists. Storage grew with the number of drill groups an
 I used Muay Thai training as a practical scenario. A general workout supplied common session information, while a specialized session added a focus and drill combinations. This organization supported future specialized workouts without duplicating the shared code. The same pattern could organize general security events and specialized alerts in a cybersecurity application.
 
 ## Submission Status
-I completed and locally verified the implementation. The student still needed to run and review the files, commit and push them, insert the actual repository link in the discussion post, and respond to two classmates.
-
+I ran and reviewed the program successfully in IntelliJ and uploaded the implementation and documentation to GitHub.
 ---
 
 ## Original Assignment Instructions
@@ -67,7 +65,7 @@ Your reflection should be approximately 150–200 words and address the followin
 
 This assignment helped me understand how classes combined related data and behavior. I modeled a general workout in ParentClass and extended it into a Muay Thai session in ChildClass. Using super() allowed me to reuse initialization and description logic instead of repeating it.
 
-The most challenging concept was copying nested mutable data. I compared the output after adding "Hook" to the original drill combination. The shallow copy reflected that change because it shared the drills list, while the deep copy retained its independent combination. Displaying __dict__ also helped me distinguish shared class attributes from attributes stored on individual objects.
+The most challenging concept was copying nested mutable data. I compared the output after adding "Hook" to the original drill combination. The shallow copy reflected that change because it shared the drills list, while the deep copy retained its independent combination. Displaying `__dict__` also helped me distinguish shared class attributes from attributes stored on individual objects.
 
 Compared with procedural programming, which organized tasks around functions and steps, OOP provided a useful structure for multiple related session types. This supported maintainability and reusability because shared behavior could be updated in one parent class. However, extra classes could complicate a small script, and deep copying increased processing and memory overhead as nested data grew.
 
