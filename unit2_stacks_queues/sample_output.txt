@@ -1,0 +1,47 @@
+=== UNIT 2: STACKS AND QUEUES ===
+
+=== STACK DEMO: LIFO ===
+Pushed 10
+Pushed 20
+Pushed 30
+Pushed 40
+Pushed 50
+Peek: 50 (50 remained on top)
+Popped 50: newest remaining item left first
+Popped 40: newest remaining item left first
+Popped 30: newest remaining item left first
+Popped 20: newest remaining item left first
+Popped 10: newest remaining item left first
+Handled empty stack: Cannot pop from an empty stack.
+Handled empty stack: Cannot peek at an empty stack.
+Single-item stack: removed 99; is_empty() = True
+
+=== QUEUE DEMO: FIFO ===
+Enqueued 10
+Enqueued 20
+Enqueued 30
+Enqueued 40
+Enqueued 50
+Front: 10 (10 remained at the front)
+Dequeued 10: oldest remaining item left first
+Dequeued 20: oldest remaining item left first
+Dequeued 30: oldest remaining item left first
+Dequeued 40: oldest remaining item left first
+Dequeued 50: oldest remaining item left first
+Handled empty queue: Cannot dequeue from an empty queue.
+Handled empty queue: Cannot view the front of an empty queue.
+Single-item queue: removed 99; is_empty() = True
+
+=== CUSTOM SCENARIO: SUPPORT DESK ===
+Ticket arrived: Reset password
+Ticket arrived: Install printer
+Ticket arrived: Update software
+FIFO service: Reset password
+FIFO service: Install printer
+FIFO service: Update software
+LIFO history removal (did not restore tickets):
+Undo history: Processed ticket: Update software
+Undo history: Processed ticket: Install printer
+Undo history: Processed ticket: Reset password
+
+All demonstration assertions passed.
