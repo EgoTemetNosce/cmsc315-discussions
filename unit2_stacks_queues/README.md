@@ -30,4 +30,5 @@ One challenge was deciding how empty operations should behave. I raised descript
 My support desk scenario connected both structures to one workflow. The queue processed tickets in arrival order, while the stack removed the latest processed history entry first. Removing history did not restore a ticket. A stack also suited a text editor’s undo sequence, while a queue suited a coffee shop line. Memory usage grew linearly with the number of stored items. This assignment helped me connect predictable ordering to practical design decisions and recognize why boundary cases needed explicit checks.
 
 ## Submission Status
-The code and README were completed and the program was verified. Uploading and committing these files to GitHub, posting the repository link in LEO, and writing two peer responses remained pending.
+
+I completed and tested the Python program in IntelliJ, where all demonstration assertions passed. I uploaded and committed the completed code and README to my GitHub repository. Posting the initial discussion in LEO and responding to two classmates remained pending.
