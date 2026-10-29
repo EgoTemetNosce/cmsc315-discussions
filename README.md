@@ -1,54 +1,23 @@
-# Completed Implementation: Muay Thai Training Sessions
-
-## Implementation Documentation
-I modeled training sessions with the original ParentClass and ChildClass names so the completed code remained easy to compare with the starter.
-
-- I created ParentClass with the class variable activity, the instance variables name and _duration, a constructor, and describe().
-- I created ChildClass with inheritance, the class variable sport, the instance variables focus and drills, add_drill(), and an overridden describe(). I used super() to reuse the parent's initialization and description.
-- I used _duration to signal an internal attribute by Python convention. This convention did not prevent outside access. I validated duration in the constructor.
-- I implemented `__str__` to provide readable object output and `__len__` to return the number of drill groups.
-- I displayed two instance namespaces using `__dict__`. I accessed sport through both the class and an object, added coach to only one object, and displayed the child class namespace keys.
-- I demonstrated shallow and deep copying with a nested list of drills. After I added Hook to the original combination, the shallow copy also contained Hook. The deep copy retained only Jab and Cross.
-- I added validation and edge-case checks as my student-created extension. I caught ValueError so invalid entries did not stop the demonstration.
-
-## Verification
-I ran the program with Python 3 and all assertions passed. I checked a parent description, inheritance, adding a drill, an empty drill list, a blank session name, zero and negative durations, a text duration, a NaN duration, and a blank drill. The empty list returned a length of zero. Invalid values produced clear messages. A valid drill was added after a failed entry, which demonstrated recovery.
-
-## Memory and Growth
-I stored drills in nested lists. Storage grew with the number of drill groups and their contents. Appending a group took amortized O(1) time; len() took O(1) time. A shallow object copy created a separate instance but shared the nested drills. A deep copy duplicated the nested data, so its time and additional memory grew with the copied data. The constructor also deep-copied the supplied drills to prevent separate sessions from sharing the caller's mutable list.
-
-## Real-World Application
-I used Muay Thai training as a practical scenario. A general workout supplied common session information, while a specialized session added a focus and drill combinations. This organization supported future specialized workouts without duplicating the shared code. The same pattern could organize general security events and specialized alerts in a cybersecurity application.
-
-## Submission Status
-I ran and reviewed the program successfully in IntelliJ and uploaded the implementation and documentation to GitHub.
----
-
-## Original Assignment Instructions
-# Unit 1 Discussion: Python OOP, Namespaces, and Copying
+# Unit 3 Discussion: List Operations
 
 ## Overview
 
-This assignment explores object-oriented programming (OOP) concepts in Python, including inheritance, namespaces, and object copying.
+This assignment examines insertion, deletion, and searching in Python lists.
 
 ## Learning Objectives
 
-- Create parent and child classes
-- Use inheritance to extend functionality
-- Understand class and instance namespaces
-- Demonstrate shallow and deep copying
-- Apply object-oriented design principles
+- Insert values into a list
+- Delete values from a list
+- Search for values in a list
+- Analyze list behavior and performance
 
 ## Requirements
 
-Complete all TODO sections in the source code:
-
-1. Create a parent class.
-2. Create a child class using inheritance.
-3. Demonstrate class and instance namespaces.
-4. Demonstrate shallow and deep copying.
-5. Create and test objects in `main()`.
-6. Add a student-created extension.
+1. Test insertion at the beginning, middle, and end.
+2. Test deletion at the beginning, middle, and end.
+3. Search for existing and missing values.
+4. Demonstrate edge cases.
+5. Create a real-world scenario.
 
 ## Discussion Board Reflection
 
@@ -58,15 +27,30 @@ Your reflection should be approximately 150–200 words and address the followin
 
 1. What concepts or skills did you learn while completing this assignment?
 2. What challenges did you encounter, and how did you overcome them?
-3. Compare OOP to procedural programming.
-4. Discuss the benefits of maintainability and reusability and apply this managing overhead, practical application development, and future use.
+3. How do list operations impact performance in real-world applications?
 
-## Reflection Essay
+## Completed Implementation
 
-This assignment helped me understand how classes combined related data and behavior. I modeled a general workout in ParentClass and extended it into a Muay Thai session in ChildClass. Using super() allowed me to reuse initialization and description logic instead of repeating it.
+I created a streaming service watchlist using Python's array-based list. I kept all starter TODO prompts and comments and added comments explaining shifting, validation, and performance.
 
-The most challenging concept was copying nested mutable data. I compared the output after adding "Hook" to the original drill combination. The shallow copy reflected that change because it shared the drills list, while the deep copy retained its independent combination. Displaying `__dict__` also helped me distinguish shared class attributes from attributes stored on individual objects.
+- I implemented `insert_at` with `list.insert` and demonstrated beginning, middle, and end insertion.
+- I implemented `delete_at` with index validation and `list.pop`. I returned the removed value, or `None` for an invalid index. I supported valid negative indices.
+- I implemented `search_value` with a sequential loop. I returned the first matching index, or `-1` when no match existed.
+- I demonstrated invalid positive/negative deletion indices, a non-integer deletion index, empty-list operations, a single-item deletion, and duplicate searching.
+- I used watchlist titles to demonstrate adding, removing, and locating real-world list entries.
 
-Compared with procedural programming, which organized tasks around functions and steps, OOP provided a useful structure for multiple related session types. This supported maintainability and reusability because shared behavior could be updated in one parent class. However, extra classes could complicate a small script, and deep copying increased processing and memory overhead as nested data grew.
+## Execution and Verification
 
-Input validation prevented invalid sessions from interrupting execution. In future cybersecurity applications, I could apply these principles to organize specialized alerts, reuse validation logic, and handle malformed data reliably.
+I ran the starter before editing; it printed placeholder messages. I then ran the completed program with Python 3 using `python unit3_discussion.py` and verified its output. I also checked the functions with assertions for insertion positions, deletion positions, invalid indices, empty lists, duplicates, and negative indexing.
+
+The insertion examples produced six titles. The deletion examples removed Arrival, Inception, and Blade Runner. The remaining watchlist contained The Matrix, Dune, and Interstellar. Searching found The Matrix at index 0 and returned -1 for Titanic. Invalid deletions returned None without changing the list.
+
+## Performance Analysis
+
+I identified beginning/middle insertion and deletion as O(n) because later references shifted. I identified end insertion as amortized O(1), last-item deletion as O(1), indexed access as O(1), and sequential search as O(n) in the worst case.
+
+I compared this with a linked list: insertion or deletion could take O(1) when the relevant node and necessary links were already available. Finding the location could still take O(n). I noted that linked lists required extra link storage and usually offered poorer cache locality, while Python lists stored references in a contiguous array.
+
+## Submission Status
+
+I reviewed submission_checklist.md and verified the code modification, edge case, concept understanding, and customization requirements against the completed implementation. The files still needed to be uploaded and committed to GitHub, and the initial post and two peer responses still needed to be submitted in LEO.
